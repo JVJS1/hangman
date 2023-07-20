@@ -1,22 +1,32 @@
 const alfabet = "abcdefghijklmnopqrstuvwxyz";
-let livesCounter = 5;
+const maxLives = 5;
+let livesCounter = maxLives;
 const words = ["java", "html", "javascript", "css", "python"];
 let wordToGuess = undefined;
 
 
-window.addEventListener("DOMContentLoaded", ()=>{
-    // build keyboard 
+window.addEventListener("DOMContentLoaded", () => {
+    buildKeyboard();
+
+    setLivesCounter(maxLives);
+
+    const newGameButton = document.getElementById("newGame");
+    newGameButton.addEventListener("click", newGame);
+});
+
+function setLivesCounter(counter) {
+    const livesCounterElement = document.getElementById("livesCounter");
+    livesCounter = counter;
+    livesCounterElement.innerText = livesCounter;
+}
+
+function buildKeyboard() {
     const keyboard = document.getElementById("keyboard");
     for(const letter of alfabet){
         const keyButton = buildKey(letter);
         keyboard.appendChild(keyButton);
     }
-    const livesCounterElement = document.getElementById("livesCounter");
-    livesCounterElement.innerText = livesCounter;
-
-    const newGameButton = document.getElementById("newGame");
-    newGameButton.addEventListener("click", newGame);
-});
+}
 
 function buildKey(letter){
     const keyButton = document.createElement("button");
