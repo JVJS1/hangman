@@ -1,0 +1,21 @@
+
+:root{
+    --key-size:48px;
+    
+}
+
+.keysContainer{
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+
+}
+
+.keyboardKey{
+    width: var(--key-size);
+    height: var(--key-size);
+    margin: 0.5em;
+
+}
