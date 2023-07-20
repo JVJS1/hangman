@@ -10,17 +10,21 @@
   </head>
   <body>
     <main>
-      <section id="livesIndicator"> 
-        <span>Lives Remaining: </span>
-        <span id="livesCounter"></span>
+      <section id="statusIndicator" class="statusIndicator"> 
+        <span>
+          <span>Lives Remaining: </span>
+          <span id="livesCounter"></span>
+        </span>
+        
+        <span id="hintContainer"></span>
       </section>
-      <section id="hiddenWord"></section>
-       <section id="keyboard" class="keysContainer"></section>
-       <section id="controls">
-        <button id="newGame">Start</button>
+      <section id="hiddenWord" class="hiddenWord"></section>
+      <section id="keyboard" class="keysContainer"></section>
+      <section id="controls">
+        <button id="newGame">Reset</button>
         <button id="hint">Hint</button>
-       </section>
-       <section id="winLose"></section>
+      </section>
+      <section id="winLose"></section>
 
        
     </main>
