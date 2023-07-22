@@ -6,6 +6,7 @@ const loseMessage = "I'm sorry... You're out of lives...";
 const words = ["java", "html", "javascript", "css", "python"];
 let guesses = [];
 let wordToGuess = undefined;
+// test 
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -128,8 +129,13 @@ function newGame(){
         hiddenWord.appendChild(letterBox);
     }
     // todo: reset hint button, reset hint message
+    const hintButton = document.getElementById("hint");
+    hintButton.disabled = false;
+    const hintContainer = document.getElementById("hintContainer");
+    hintContainer.innerHTML = "";
 
     resetKeyboard();
+    
 }
 
 function resetKeyboard() {
