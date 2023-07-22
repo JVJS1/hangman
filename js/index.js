@@ -132,6 +132,7 @@ function newGame(){
     hintButton.disabled = false;
     const hintContainer = document.getElementById("hintContainer");
     hintContainer.innerHTML = "";
+  
     resetKeyboard();
 }
 
