@@ -28,7 +28,7 @@ margin: 0 auto;
     font-weight: bold;
     font-size: 1.3em;
     border: none;
-    box-shadow: 1px 15px 0px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 5px 0px -2px rgba(0, 0, 0, 0.75);
     cursor: pointer;   
 }
 
