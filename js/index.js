@@ -128,7 +128,10 @@ function newGame(){
         hiddenWord.appendChild(letterBox);
     }
     // todo: reset hint button, reset hint message
-
+    const hintButton = document.getElementById("hint");
+    hintButton.disabled = false;
+    const hintContainer = document.getElementById("hintContainer");
+    hintContainer.innerHTML = "";
     resetKeyboard();
 }
 
