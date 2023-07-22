@@ -88,13 +88,17 @@ function isGameWon() {
 
 function updateHiddenWord() {
     let hiddenWord = document.getElementById ("hiddenWord");
+    let lastGuessed = guesses[guesses.length-1];
     hiddenWord.innerHTML = "";
     for(const letter of wordToGuess){
         const letterBox = document.createElement("span");
         const letterParagraph = document.createElement("p");
         if (!guesses.includes(letter)) {
             letterParagraph.classList.add("invisible");
-        }        
+        }    
+        else if(letter === lastGuessed){
+            letterParagraph.classList.add("guessedLetter");
+        }    
         letterParagraph.innerText = letter;
         letterBox.appendChild(letterParagraph);
         hiddenWord.appendChild(letterBox);
