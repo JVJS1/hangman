@@ -2,7 +2,9 @@ const alfabet = "abcdefghijklmnopqrstuvwxyz";
 const maxLives = 10;
 let livesCounter = maxLives;
 const winMessage = "Congratulaions! You won!";
+const winCssClasses = "alert alert-success";
 const loseMessage = "I'm sorry... You're out of lives...";
+const loseCssClasses = "alert alert-danger";
 const words = ["java", "html", "javascript", "css", "python"];
 let guesses = [];
 let wordToGuess = undefined;
@@ -65,6 +67,7 @@ function guess(char) {
         if (isGameWon()) {
             // informeaza userul ca a castigat
             winLoseSection.innerText = winMessage;
+            winLoseSection.className = winCssClasses;
         }
     } else {
         // actualizam vietile ramase
@@ -72,6 +75,7 @@ function guess(char) {
         if (livesCounter < 1) {
             // informeaza userul ca a pierdut
             winLoseSection.innerText = loseMessage;
+            winLoseSection.className = loseCssClasses;
         }
     }
 }
@@ -123,6 +127,7 @@ function newGame(){
     // goleste html-ul pentru mesajul win/lose
     const winLoseSection = document.getElementById("winLose");
     winLoseSection.innerHTML = "";
+    winLoseSection.className = "invisible";
     // alege un cuvant aleator pentru ghicit si creaza html-ul pentru linii
     for(const letter of wordToGuess){
         const letterBox = document.createElement("span");
