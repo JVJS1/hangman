@@ -1,5 +1,5 @@
 const alfabet = "abcdefghijklmnopqrstuvwxyz";
-const maxLives = 5;
+const maxLives = 10;
 let livesCounter = maxLives;
 const winMessage = "Congratulaions! You won!";
 const loseMessage = "I'm sorry... You're out of lives...";
@@ -109,6 +109,7 @@ function buildKey(letter){
 
 function newGame(){ 
     guesses = [];
+    setLivesCounter(maxLives);
     const wordIndex = getRandomInt(words.length);
     wordToGuess = words[wordIndex];
     // goleste html-ul pentru cuvantul ghicit
@@ -129,7 +130,6 @@ function newGame(){
     // todo: reset hint button, reset hint message
 
     resetKeyboard();
-
 }
 
 function resetKeyboard() {
