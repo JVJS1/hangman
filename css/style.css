@@ -10,12 +10,11 @@ flex-direction: row;
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
-background-color: #262c2c;
+background-color:#262c2c;
 border-radius: 10px;
 padding: 1em;
 max-width: 595px;
 margin: 0 auto;
-
 }
 
 .keyboardKey{
@@ -23,16 +22,14 @@ margin: 0 auto;
     height: var(--key-size);
     margin: 0.25em;
     border-radius: 10px;
-    color: #73b9ca;
-    text-transform:uppercase;
+    color:#73b9ca;
+    text-transform: uppercase;
     background-color: #323640;
     font-weight: bold;
     font-size: 1.3em;
     border: none;
-    box-shadow: 1px 4px 0px -2px rgba(0, 0, 0, 0.75);
-    cursor: pointer;
-    
-
+    box-shadow: 1px 15px 0px -2px rgba(0, 0, 0, 0.75);
+    cursor: pointer;   
 }
 
 .hiddenWord {
@@ -72,8 +69,8 @@ margin: 0 auto;
 
 button.keyboardKey:disabled,
 button.keyboardKey[disabled] {
-    border: none;
-    color: rgb(119, 67, 67);
-    box-shadow: none;
-    cursor: default;
+   border: none;
+   color:rgb(119,67,67);
+   box-shadow: none;
+   cursor: default;
 }
