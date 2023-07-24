@@ -118,11 +118,11 @@ function buildKey(letter){
     return keyButton;
 }
 
-function newGame(){ 
+async function newGame(){ 
     guesses = [];
     setLivesCounter(maxLives);
     const wordIndex = getRandomInt(words.length);
-    wordToGuess = words[wordIndex];
+    wordToGuess = await fetchRandomWord();
     // goleste html-ul pentru cuvantul ghicit
     let hiddenWord = document.getElementById ("hiddenWord");
     hiddenWord.innerHTML = "";
@@ -160,4 +160,13 @@ function resetKeyboard() {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
+}
+
+async function fetchRandomWord(){
+    const api = "https://random-word-api.herokuapp.com/word";
+    const response = await fetch(api);
+    const parsedResponse = await response.json();
+    console.log(parsedResponse);
+    return parsedResponse[0];
+
 }
