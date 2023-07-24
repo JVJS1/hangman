@@ -88,6 +88,8 @@ margin: 0 auto;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    max-width: 595px;
+    margin: 0 auto;
 }
 
 button.keyboardKey:disabled,

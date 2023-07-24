@@ -5,6 +5,7 @@ const winMessage = "Congratulaions! You won!";
 const winCssClasses = "alert alert-success";
 const loseMessage = "I'm sorry... You're out of lives...";
 const loseCssClasses = "alert alert-danger";
+const hintCssClass = "alert alert-info";
 const words = ["java", "html", "javascript", "css", "python"];
 let guesses = [];
 let wordToGuess = undefined;
@@ -29,12 +30,13 @@ function displayHint() {
     const remainingLetters = [];
     for (const letter of wordToGuess) {
         if (!guesses.includes(letter)){
-            remainingLetters.push(letter);
+            remainingLetters.push(letter.toUpperCase());
         }
     }
     const hintIndex = getRandomInt(remainingLetters.length);
 
     const hintContainer = document.getElementById("hintContainer");
+    hintContainer.className = hintCssClass;
     hintContainer.innerText = `Your hint is: ${remainingLetters[hintIndex]}`;
     const hintButton = document.getElementById("hint");
     hintButton.disabled = true;
@@ -128,6 +130,9 @@ function newGame(){
     const winLoseSection = document.getElementById("winLose");
     winLoseSection.innerHTML = "";
     winLoseSection.className = "invisible";
+    const hintSection = document.getElementById("hintContainer");
+    hintSection.className = "invisible";
+
     // alege un cuvant aleator pentru ghicit si creaza html-ul pentru linii
     for(const letter of wordToGuess){
         const letterBox = document.createElement("span");
